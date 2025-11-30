@@ -1,0 +1,7 @@
+{
+  "name": "F1 Race Replay - Web Edition",
+  "description": "Real-time 3D visualization of simulated F1 telemetry data with AI-powered race analysis.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
