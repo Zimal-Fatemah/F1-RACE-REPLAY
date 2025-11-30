@@ -8,6 +8,12 @@ export interface Driver {
   shortName: string;
 }
 
+export interface TyreStrategy {
+  compound: 'SOFT' | 'MEDIUM' | 'HARD' | 'INTER' | 'WET';
+  age: number;
+  condition: number; // 0-100%
+}
+
 export interface CarState {
   driverId: string;
   position: Vector3;
@@ -15,20 +21,22 @@ export interface CarState {
   lap: number;
   lapProgress: number; // 0 to 1
   speed: number; // km/h
-  isLeader?: boolean;
+  strategy: TyreStrategy;
+  nextPitWindow: string;
 }
 
 export interface RaceSession {
-  currentTime: number; // Seconds since start
+  id: string;
+  name: string;
+  location: string;
   totalLaps: number;
-  isPlaying: boolean;
-  playbackSpeed: number;
+  date: string;
 }
 
 export enum CameraMode {
   TV_BROADCAST = 'TV_BROADCAST',
   FOLLOW = 'FOLLOW',
-  OVERHEAD = 'OVERHEAD',
+  MAP_2D = 'MAP_2D',
 }
 
 export interface ChatMessage {
